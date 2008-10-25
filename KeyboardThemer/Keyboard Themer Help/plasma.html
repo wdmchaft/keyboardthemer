@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1.dtd">
+<!--
+   Copyright 2009 Dominic Cooney.
+   
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ -->
+<html lang="en">
+  <head>
+    <title>Plasma</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="home">
+      <div>
+        <a href="index.html" class="home">Home</a>
+      </div>
+    </div>
+    <div class="homespace">&nbsp;</div>
+    <img src="icon.png" id="branding" />
+    <h1>Plasma</h1>
+    <div class="sidebar">
+      <h1>Effects Guide</h1>
+      <ul>
+        <li><a href="life.html">Conway's Life</a></li>
+        <li><a href="heatmap.html">Heat Map</a></li>
+        <li><a href="plasma.html">Plasma</a></li>
+      </ul>
+      <h1>Programming Guide</h1>
+      <ul>
+        <li><a href="applescript.html">AppleScript</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="keys.html">Key Name Reference</a></li>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <h1>More Information</h1>
+      <p>
+        <a href="http://www.macledkeyboard.com/">
+          Web Site
+        </a>
+      </p>
+      <p>
+        <a href="http://macledkeyboard.uservoice.com/">
+          Online Discussion Forum
+        </a>
+      </p>
+    </div>
+    <div style="clear: left;">
+      <p>
+        The <b>Plasma Effect</b> animates a demoscene plasma
+        [<a href="http://en.wikipedia.org/wiki/Plasma_effect">Wikipedia</a>]
+        on your keyboard.
+      </p>
+      <p>
+        You can vary the <b>Frequency</b>, <b>Offset</b>
+        and <b>Power</b> of each of the
+        four <b>Red</b>, <b>Green</b>, <b>Blue</b> and <b>Alpha</b>
+        components individually.
+      </p>
+      <p>
+        In general:
+      </p>
+      <ul>
+        <li>
+          Lower <b>Frequency</b> settings result in
+          &#145;smoother&#146; variations. At one extreme, by sliding
+          all the way to the left, you get the same intensity on every
+          key. At the other extreme, by sliding all the way to the
+          right, you can very sharp points and striations.
+        </li>
+        <li>
+          The <b>Offset</b> is useful for controlling how components
+          at roughly the same frequency mix together. For example,
+          putting red at offset zero, green at offset 1/3 and blue at
+          offset 2/3 with the same frequency means red, green and blue
+          will all appear, because each component will reach its peak
+          intensity at a different time. Alternatively, if you put red
+          and green at the same offset with the same frequency you
+          won't see red or green but yellow&mdash;the result of mixing
+          red and green light is yellow&mdash;because the red and
+          green components will reach their peak intensity at the same
+          time.
+        </li>
+        <li>
+          Finally, the <b>Speed</b> setting changes how quickly the
+          plasma moves. If you drag the slider all the way to the left
+          the plasma doesn't move, and you can use the Plasma Effect to
+          create an interesting static background.
+        </li>
+      </ul>
+      <p>
+        The Plasma Effect has a lot of settings, so experiment with
+        them to see the range of plasmas you can generate. To get
+        started, drag the <b>Power</b> slider of the green and blue
+        components to the left, and drag the <b>Frequency</b>
+        and <b>Offset</b> sliders of the alpha component all the way
+        to the left (but leave the <b>Power</b> slider of the alpha
+        component all the way to the right.) This effectively turns
+        off green and blue and leaves alpha constant so you can
+        concentrate on the effect of varying
+        the <b>Frequency</b>, <b>Offset</b> and <b>Power</b> of the
+        red component in isolation. Some of the most striking plasma
+        backgrounds use a single color this way. Then experiment with
+        mixing in some green, and later blue and alpha.
+      </p>
+    </div>
+    <p class="notice">
+      Copyright &copy; 2009 Dominic Cooney.
+    </p>
+  </body>
+</html>

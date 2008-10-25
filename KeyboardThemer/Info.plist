@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>kthm</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string></string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>x-application/keyboard-themer-theme</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Keyboard Theme</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>NSDocumentClass</key>
+			<string>MyDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>KeyboardThemerLicense</string>
+			</array>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>x-application/keyboard-themer-license</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Keyboard Themer License File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>XML</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>KeyboardThemerIcon.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.macledkeyboard.KeyboardThemer</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.3</string>
+	<key>NSAppleScriptEnabled</key>
+	<string>YES</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>OSAScriptingDefinition</key>
+	<string>KeyboardThemer.sdef</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+	<key>SUFeedURL</key>
+	<string>http://www.macledkeyboard.com/appcast.xml</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2009 Dominic Cooney. Portions Copyright © 2006 Andy Matuschak. Portions Copyright © 2002 Brent Simmons. Portions Copyright © 1998-2005 The OpenSSL Project. Portions Copyright © 1995-1998 Eric Young. Portions Copyright © 2006-2009 Google Inc.</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Keyboard Themer Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Keyboard Themer Help</string>
+</dict>
+</plist>

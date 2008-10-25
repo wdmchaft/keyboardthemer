@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1.dtd">
+<!--
+   Copyright 2009 Dominic Cooney.
+   
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ -->
+<html lang="en">
+  <head>
+    <title>JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="home">
+      <div>
+        <a href="index.html" class="home">Home</a>
+      </div>
+    </div>
+    <div class="homespace">&nbsp;</div>
+    <img src="icon.png" id="branding" />
+    <h1>JavaScript</h1>
+    <div class="sidebar">
+      <h1>Effects Guide</h1>
+      <ul>
+        <li><a href="life.html">Conway's Life</a></li>
+        <li><a href="heatmap.html">Heat Map</a></li>
+        <li><a href="plasma.html">Plasma</a></li>
+      </ul>
+      <h1>Programming Guide</h1>
+      <ul>
+        <li><a href="applescript.html">AppleScript</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="keys.html">Key Name Reference</a></li>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <h1>More Information</h1>
+      <p>
+        <a href="http://www.macledkeyboard.com/">
+          Web Site
+        </a>
+      </p>
+      <p>
+        <a href="http://macledkeyboard.uservoice.com/">
+          Online Discussion Forum
+        </a>
+      </p>
+    </div>
+    <div style="clear: left;">
+<p>
+  JavaScript is the popular scripting language used in web
+  browsers. Keyboard Themer's <b>JavaScript Effect</b> embeds the V8
+  JavaScript interpreter used by Google Chrome to let you write custom
+  effects in JavaScript. Scripting your keyboard with JavaScript is a
+  good choice when you want to react to key presses, design animated
+  effects, or download webpages and light up keys depending on the
+  contents of pages. If you want to integrate with other applications
+  on your computer, <a href="applescript.html">AppleScript
+  effects</a> are a better choice.
+</p>
+<p>
+  If you are new to JavaScript, you should
+  read <a href="http://www.amazon.com/gp/product/0596517742?ie=UTF8&tag=dcooneycom-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0596517742">JavaScript:
+  The Good
+  Parts</a><img src="http://www.assoc-amazon.com/e/ir?t=dcooneycom-20&l=as2&o=1&a=0596517742"
+  width="1" height="1" border="0" alt="" style="border:none
+  !important; margin:0px !important;" />; it is a concise guide to
+  using JavaScript effectively.
+</p>
+
+<h2>Getting Started with JavaScript Effects</h2>
+<p>
+  To write a JavaScript effect, drag one from the available effects to
+  the applied effects. You type JavaScript source code into
+  the <b>Effect Settings</b> panel and click the <b>Play</b> button to
+  start the interpreter. After you change an effect, you should toggle
+  the Play button again so the interpreter picks up your changes.
+</p>
+<p>
+  The <code>keys</code> object lets you set the color and opacity of
+  each key by name&mdash;see the <a href="keys.html">key name
+  reference</a> for a complete list of names. You specify colors and
+  opacity with a JavaScript object literal
+  with <code>r</code>, <code>g</code>, <code>b</code>
+  and <code>a</code> properties for the red, green, blue and alpha
+  components respectively. Each component ranges from 0.0
+  (black/transparent) to 1.0 (bright/opaque). For example, <code>{r:
+  0.0, g: 0.0, b: 1.0, a: 0.75}</code> is 75% opaque blue. If you omit
+  the alpha component, opaque (<code>1.0</code>) is assumed. For
+  example, the following code sets the 'A' key bright red:
+</p>
+<pre class="example">
+keys['A'] = {r: 1.0, g: 0.0, b: 0.0};
+</pre>
+<p>
+  When your effect is visible and the keyboard is plugged in, your
+  script is called once. If you want to change keys over time you can
+  use the <code>setTimeout</code> function, described below, to update
+  keys. If you want to develop an animated effect your script can
+  include a <code>draw</code> function. Keyboard Themer will call
+  your <code>draw</code> function as fast as the keyboard can be
+  updated; your <code>draw</code> method should update the keys as
+  quickly as possible. For example, this script blinks the ~ key as
+  quickly as possible:
+</p>
+<pre class="example">
+var on = false;
+
+function draw() {
+  keys['~'] = on ? {r: 0.0, g: 0.0, b: 1.0} : {a: 0.0};
+  on = !on;
+}
+</pre>
+<p>
+  You should also use the <code>draw</code> method if you want to
+  respond to key presses. The <code>isPressed</code> property will
+  tell you if a key is being held down, but because a key could be
+  pressed and released between calls to <code>draw</code>, there are
+  two other properties&mdash;<code>up</code>
+  and <code>down</code>&mdash;that tell you if a key was pressed
+  (<code>down</code>) and/or released (<code>up</code>) since the last
+  time <code>draw</code> was called. For example, the following script
+  lights up keys as they're pressed, and keeps them illuminated if
+  they're held down:
+</p>
+<pre class="example">
+function draw() {
+  keys.clear();
+  for (var key in keys) {
+    if (keys[key].isPressed || keys[key].down) {
+      keys[key] = {r: 1.0, g: 1.0, b: 1.0};
+    }
+  }
+}
+</pre>
+<p>
+  This also demonstrates using JavaScript's <code>for (... in
+  ...)</code> syntax to do something with all of the keys.
+</p>
+<p>
+  If access for assistive devices isn't
+  enabled, <code>isPressed</code>, <code>up</code>
+  and <code>down</code> will always be <code>false</code>. To enable
+  access for assistive devices, open <b>System Preferences</b>,
+  click <b>Universal Access</b>, and check the <b>Enable access for
+  assistive devices</b> checkbox.
+</p>
+
+<h2>Function Reference</h2>
+<p>
+  This section documents the functions and objects that are unique to
+  Keyboard Themer. JavaScript effects can also access the typical
+  built-in JavaScript objects such
+  as <code>Object</code>, <code>String</code>, <code>Date</code>, <code>Array</code>
+  and so on, and any serious effect will probably need to. Note that
+  the objects related to the web browser, such as
+  the <code>window</code> object, aren't available in Keyboard Themer.
+</p>
+
+<dl>
+<dt><code>download(<span class="variable">url</span>, {
+onComplete: <span class="variable">callback</span>,
+onError: <span class="variable">callback</span> })</code></dt>
+<dd>
+  Downloads the specified URL. When the download is finished,
+  the <code>onComplete</code> callback is called with the text of the
+  downloaded content. If there's a problem the <code>onError</code>
+  callback is called instead with a descriptive error
+  message. The <code>onError</code> callback is optional.
+<pre class="example">
+var re = /href="\/q\?s=(\w+)([^<]|(<[^a]))*?color:#([a-fA-F0-9]{6});/g;
+
+download('http://finance.yahoo.com/q?s=AAPL+MSFT+YHOO+GOOG', {
+  onComplete: function (page) {
+    var m;
+    while (m = re.exec(page)) {
+      keys[m[1][0]] = m[4];
+    }
+  },
+  onError: log
+});
+</pre>
+  Don't call <code>download</code> every time <code>draw</code> is
+  called&mdash;that would result in over three hundred requests per
+  minute. Use <code>setTimeout</code>, or examine the time with
+  a <code>Date</code> object, or use a counter to only make a request
+  once every 2000 or so calls to <code>draw</code> (there are about
+  six calls to <code>draw</code> every second, so doing something once
+  every 1,800 calls means doing it once roughly every five minutes.)
+</dd>
+<dt><code>keys[<span class="variable">name</span>]</code> [ <code>= <span class="variable">color</span></code> ]</dt>
+<dd>
+  Gets or sets the color of the <code class="variable">name</code>
+  key. Colors can be RRGGBB hex strings&mdash;for
+  example <code>'#FF0000'</code> is bright red&mdash;or objects
+  with <code>r</code>, <code>g</code>, <code>b</code>
+  and <code>a</code> properties for the red, green, blue and alpha
+  color components respectively. The component values should be
+  between 0.0 and 1.0, for example, <code>{r: 0.0, g: 1.0, b: 0.0, a:
+  0.8}</code> is bright green with 80% opacity.
+</dd>
+<dt><code>keys[<span class="variable">name</span>].down</code></dt>
+<dd>
+  Gets whether the specified key was pressed since the last
+  time <code>draw</code> was called. This property is
+  only <code>true</code> when the key is first pressed, it then flips
+  back to <code>false</code> (use the <code>isPressed</code> property
+  if you want to track whether the key is held down.)
+</dd>
+<dt><code>keys[<span class="variable">name</span>].up</code></dt>
+<dd>
+  Gets whether the specified key was released since the last
+  time <code>draw</code> was called.
+</dd>
+<dt><code>keys[<span class="variable">name</span>].isPressed</code></dt>
+<dd>
+  Gets whether the specified key is being held down.
+</dd>
+<dt><code>keys.paint(<span class="variable">color</span>, <span class="variable">key</span></code> [<code>, <span class="variable">key</span>,</code> ...]<code>)</code></dt>
+<dd>
+  Paints the specified keys with a color. <code>paint</code> is
+  different from setting the color of a key directly in the way
+  transparency is handled: if the specified color is
+  transparent, <code>paint</code> blends it with the color that is
+  already in the <code>keys</code> object.
+</dd>
+<dt><code>keys.clear(</code>[<code class="variable">color</code>]<code>)</code></dt>
+<dd>
+  Sets all of the keys to be completely transparent; effects
+  underneath the script effect will shine through. If a color is
+  specified, all of the keys are set to that color instead.
+</dd>
+<dt><code>log(<span class="variable">msg</span>)</code></dt>
+<dd>
+  Logs <code class="variable">msg</code> to the console at the bottom
+  of the effect settings panel, if the effects settings panel is
+  visible.
+</dd>
+<dt><code>setTimeout(<span class="variable">callback</span>,
+                     <span class="variable">msec</span>)</code></dt>
+<dd>
+  Invokes <code class="variable">callback</code> after at
+  least <code class="variable">msec</code> milliseconds have
+  elapsed. Unlike <code>setTimeout</code> in web
+  browsers, <code class="variable">callback</code> can't be a
+  string: Always use a function instead. For example:
+<pre class="example">
+setTimeout(function () { log('time\'s up!'); }, 60 * 1000);
+</pre>
+  This prints <code>time's up</code> to the log after one minute. If
+  you want an event to continually fire (like <code>setInterval</code>
+  does in the browser) just call <code>setTimeout</code> again to
+  re-arm your callback:
+<pre class="example">
+function f() {
+  log('time passes');
+  setTimeout(f, 1000);
+}
+setTimeout(f, 1000);
+</pre>
+  This will print <code>time passes</code> to the console roughly
+  every second.
+</dd>
+</dl>
+
+<h2>Debugging JavaScript Effects</h2>
+<p>
+  There isn't a debugger for JavaScript effects. Instead you can use
+  the <code>log</code> function to output diagnostic messages. They
+  appear in the console at the bottom of the effect settings panel.
+</p>
+<pre class="example">
+log('Hello, world!');
+</pre>
+<!-- TODO: screenshot of message in log -->
+<p>
+  Messages are only logged while the effect settings are visible, to
+  avoid slowing down your code during normal operation.
+</p>
+    </div>
+    <p class="notice">
+      Copyright &copy; 2009 Dominic Cooney.
+    </p>
+  </body>
+</html>

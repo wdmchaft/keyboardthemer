@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1.dtd">
+<!--
+   Copyright 2009 Dominic Cooney.
+   
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ -->
+<html lang="en">
+  <head>
+    <title>AppleScript</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="home">
+      <div>
+        <a href="index.html" class="home">Home</a>
+      </div>
+    </div>
+    <div class="homespace">&nbsp;</div>
+    <img src="icon.png" id="branding" />
+    <h1>AppleScript</h1>
+    <div class="sidebar">
+      <h1>Effects Guide</h1>
+      <ul>
+        <li><a href="life.html">Conway's Life</a></li>
+        <li><a href="heatmap.html">Heat Map</a></li>
+        <li><a href="plasma.html">Plasma</a></li>
+      </ul>
+      <h1>Programming Guide</h1>
+      <ul>
+        <li><a href="applescript.html">AppleScript</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="keys.html">Key Name Reference</a></li>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <h1>More Information</h1>
+      <p>
+        <a href="http://www.macledkeyboard.com/">
+          Web Site
+        </a>
+      </p>
+      <p>
+        <a href="http://macledkeyboard.uservoice.com/">
+          Online Discussion Forum
+        </a>
+      </p>
+    </div>
+    <div style="clear: left;">
+<p>
+  AppleScript is a scripting language with an English-language like
+  syntax. You can use the <b>AppleScript Effect</b> to set the color
+  of all of the keys on the keyboard via AppleScript. Scripting your
+  keyboard with AppleScript is a good choice when you want to
+  integrate with other applications on your computer. If you want to
+  react to key presses, design animated effects, or download
+  webpages, <a href="javascript.html">JavaScript effects</a> are a
+  better choice.
+</p>
+<p>
+  For example, if you want to illuminate particular keys when you have
+  unread items in Mail or when a particular application is frontmost,
+  you must use an AppleScript effect because a JavaScript effect can't
+  interrogate Mail to see whether it has unread items or detect which
+  application is frontmost.
+</p>
+<p>
+  If you are new to AppleScript, you should read
+  <a href="http://www.apple.com/applescript/firsttutorial/index.html">
+  AppleScript: The Language of Automation</a> first.
+</p>
+<h2>Getting Started with AppleScript Effects</h2>
+<p>
+  Unlike JavaScript effects, you don't write AppleScript in Keyboard
+  Themer. Instead you use an external application like <b>Automator</b>
+  or <b>Script Editor</b> (which you can find in
+  the <b>Applications</b> and
+  <b>Applications: AppleScript</b> folders) or <code>oascript</code>
+  (which you run from <b>Terminal</b>).
+</p>
+<p>
+  The effects palette in Keyboard Themer has an effect called
+  &quot;AppleScript&quot;. For the colors you set from AppleScript to
+  show up at all, you must add an AppleScript effect to the applied
+  effects and make it visible. Then the colors you set via AppleScript
+  will appear on the keyboard.
+</p>
+<p>
+  To set the color of keys, you must first address your document; then
+  you can address individual keys within the context of the
+  document. Here is how to address a document:
+</p>
+<pre class="example">
+tell document &quot;Untitled&quot; of application &quot;KeyboardThemer&quot;
+  -- set the key colors here
+end tell
+</pre>
+<p>
+  You can control both the color and opacity of each key
+  individually. By default keys are completely transparent so any
+  effects underneath the AppleScript effect show through, so you
+  usually want to set both color and opacity. You specify color with a
+  RGB triple like this: <code>{65535, 0, 0}</code>. The color
+  components range from 0 to 65535, so <code>{65535, 0, 0}</code> is
+  bright red, <code>{0, 65535, 0}</code> is bright green, and so
+  on. Opacity is a number between 0.0 (completely transparent) and 1.0
+  (completely opaque).
+</p>
+<p>
+  For example, to set the 'A' key solid, bright yellow, you would
+  write:
+</p>
+<pre class="example">
+tell document &quot;Untitled&quot; of application &quot;KeyboardThemer&quot;
+  set color of key &quot;A&quot; to {65535, 65535, 0}
+  set opacity of key &quot;A&quot; to 1.0
+end tell
+</pre>
+<p>
+  You can address keys by name as demonstrated here&mdash;see
+  the <a href="keys.html">key name reference</a> for a complete list
+  of names&mdash;or by index, starting from the ~ key at index one,
+  and proceeding roughly left-to-right, top-to-bottom across the
+  keyboard.
+</p>
+<p>
+  AppleScript can also set all keys, or runs of keys, at once. For
+  example, the following script makes the entire keyboard transparent
+  red, but illuminates the middle row in solid white:
+</p>
+<pre class="example">
+tell document &quot;Untitled&quot; of application &quot;KeyboardThemer&quot;
+  set color of every key to {65535, 0, 0}
+  set opacity of every key to 0.5
+  set color of key &quot;A&quot; thru key &quot;L&quot; to {65535, 65535, 65535}
+  set opacity of key &quot;A&quot; thru key &quot;L&quot; to 1.0
+end tell
+</pre>
+<h2>An Example AppleScript Effect: Unread Mail Items</h2>
+<p>
+  The real power of AppleScript comes from integrating multiple
+  applications with a script. This script asks the Mail application
+  how many unread items are in your inbox, and if there are unread
+  items, it makes the ~ key bright green:
+</p>
+<pre class="example">
+repeat
+  -- get the number of unread items
+  tell application &quot;Mail&quot;
+    set unread_count to the unread count of inbox
+  end tell
+
+  -- update the status light
+  tell document &quot;Untitled&quot; of application &quot;KeyboardThemer&quot;
+    if unread_count > 0 then
+      set color of key &quot;~&quot; to {0, 65535, 0}
+      set opacity of key &quot;~&quot; to 1.0
+    else
+      set opacity of key &quot;~&quot; to 0.0
+    end if
+  end tell
+
+  -- check again in a minute
+  delay 60
+end repeat
+</pre>
+<p>
+  Real scripts require more sophistication that this&mdash;this one
+  has the annoying property of starting Mail every minute if it is not
+  running&mdash;but it demonstrates the idea of combining applications
+  through script.
+</p>
+<h2>Debugging AppleScript Effects</h2>
+<p>
+  There isn't a debugger for AppleScript effects. Instead you can use
+  the <code>display dialog</code> command to output diagnostic messages:
+</p>
+<pre class="example">
+display dialog &quot;Hello, world!&quot; buttons { &quot;OK&quot; }
+</pre>
+<div class="figure">
+<img src="display_dialog.png"
+    alt="The dialog produced by the display dialog command" />
+</div>
+    </div>
+    <p class="notice">
+      Copyright &copy; 2009 Dominic Cooney.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary xmlns:xi="http://www.w3.org/2003/XInclude" title="KeyboardThemer Terminology">
+  <xi:include href="file:///System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite)"/>
+  <suite name="KeyboardThemer Suite" code="ktmD" description="KeyboardThemer information.">
+    <class name="application" code="capp" inherits="application" description="Lights up a Luxeed deTA100 keyboard on Mac OS X.">
+      <cocoa class="NSApplication" />
+    </class>
+    <class name="document" code="docu" inherits="document" description="A keyboard theme.">
+      <cocoa class="MyDocument" />
+      <element type="key" access="r">
+        <cocoa key="keysArray" />
+      </element>
+    </class>
+    <value-type name="color" code="cRGB">
+      <cocoa class="NSColor"/>
+    </value-type>    
+    <class name="key" code="keyD" description="A keyboard key that can be individually illuminated.">
+      <cocoa class="ScriptingKey" />
+      <property name="name" code="pnam" type="text" access="r"
+          description="The name of the key. See http://www.macledkeyboard.com/applescript-effects for a list of these names." />
+      <property name="color" code="colr" type="color" description="The color to display on the key." />
+      <property name="opacity" code="opaD" type="real"
+          description="How solid and bright the key appears. 0.0 is completely transparent; 1.0 is completely opaque." />
+    </class>
+  </suite>
+</dictionary>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1.dtd">
+<!--
+   Copyright 2009 Dominic Cooney.
+   
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ -->
+<html lang="en">
+  <head>
+    <title>Conway's Life</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="home">
+      <div>
+        <a href="index.html" class="home">Home</a>
+      </div>
+    </div>
+    <div class="homespace">&nbsp;</div>
+    <img src="icon.png" id="branding" />
+    <h1>Conway's Life</h1>
+    <div class="sidebar">
+      <h1>Effects Guide</h1>
+      <ul>
+        <li><a href="life.html">Conway's Life</a></li>
+        <li><a href="heatmap.html">Heat Map</a></li>
+        <li><a href="plasma.html">Plasma</a></li>
+      </ul>
+      <h1>Programming Guide</h1>
+      <ul>
+        <li><a href="applescript.html">AppleScript</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="keys.html">Key Name Reference</a></li>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <h1>More Information</h1>
+      <p>
+        <a href="http://www.macledkeyboard.com/">
+          Web Site
+        </a>
+      </p>
+      <p>
+        <a href="http://macledkeyboard.uservoice.com/">
+          Online Discussion Forum
+        </a>
+      </p>
+    </div>
+    <div style="clear: left;">
+      <p>
+        Conway's Game of Life
+        [<a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Wikipedia</a>]
+        is a two-dimensional cellular automaton. The &#145;world&#146;
+        is a grid, and each square on the grid can either be alive or
+        dead. The &#145;game&#146; starts with life scattered randomly
+        throughout the world, and then proceeds based on three simple
+        rules applied to each square. The rules depend on the
+        neighbouring squares to the top, left, bottom and right:
+      </p>
+      <ol>
+        <li>
+          If a living square has less than two living neighbours, it
+          gets lonely and dies.
+        </li>
+        <li>
+          If a living square has more than three living neighbours, it
+          dies of overcrowding.
+        </li>
+        <li>
+          If a dead square has exactly three living neighbours, it
+          comes to life.
+        </li>
+      </ol>
+      <p>
+        The <b>Conway's Life</b> effect displays the game of life on
+        the surface of your keyboard. To keep things interesting, if
+        the life pattern settles into a stable pattern, the world is
+        wiped clean and a new pattern is set up.
+      </p>
+      <p>
+        If you check the <b>Key strokes create life</b> checkbox,
+        whenever you press a key that key will come to life. Likewise,
+        if you check the <b>Key strokes destroy life</b> checkbox,
+        whenever you press a key that key will be killed.
+      </p>
+      <p>
+        The <b>Key strokes create life</b> and <b>Key strokes destroy
+        life</b> options require you to enable access for assistive
+        devices so Keyboard Themer can observe your
+        keystrokes. Open <b>System Preferences</b>, click <b>Universal
+        Access</b>, and check the <b>Enable access for assistive
+        devices</b> checkbox.
+      </p>
+    </div>
+    <p class="notice">
+      Copyright &copy; 2009 Dominic Cooney.
+    </p>
+  </body>
+</html>

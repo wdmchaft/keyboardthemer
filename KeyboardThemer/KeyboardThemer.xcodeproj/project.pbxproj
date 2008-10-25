@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD582C0DA1D0D100B32029 /* MyDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* MyDocument.xib */; };
+		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
+		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
+		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		B614A7270EBEC6E800AF34BB /* KeyboardDisplayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B614A7260EBEC6E800AF34BB /* KeyboardDisplayBuffer.m */; };
+		B614A7360EBED90E00AF34BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B614A7350EBED90E00AF34BB /* QuartzCore.framework */; };
+		B614A8000EC2DFED00AF34BB /* KeyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B614A7FF0EC2DFED00AF34BB /* KeyMap.m */; };
+		B614A8A20EC78D8200AF34BB /* KeyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B614A8A10EC78D8200AF34BB /* KeyEvent.m */; };
+		B614A8A60EC78E0300AF34BB /* Key.m in Sources */ = {isa = PBXBuildFile; fileRef = B614A8A50EC78E0300AF34BB /* Key.m */; };
+		B61F08C70F1C7F480075585C /* PlasmaEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B61F08C60F1C7F480075585C /* PlasmaEffect.m */; };
+		B61F0A7A0F2287B80075585C /* PlasmaSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61F0A790F2287B80075585C /* PlasmaSettings.xib */; };
+		B61F0ABC0F22EF4A0075585C /* MatrixEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B61F0ABB0F22EF4A0075585C /* MatrixEffect.m */; };
+		B64BA4930F3AC9A600DEB5DC /* Keyboard Themer Help in Resources */ = {isa = PBXBuildFile; fileRef = B64BA4900F3AC9A600DEB5DC /* Keyboard Themer Help */; };
+		B678559D0EA5CD8F0078A9F5 /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = B678559C0EA5CD8F0078A9F5 /* Effect.m */; };
+		B67855EE0EA703790078A9F5 /* HeatMapSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = B67855ED0EA703790078A9F5 /* HeatMapSettings.xib */; };
+		B67856750EA9AA290078A9F5 /* HeatMapEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B67856740EA9AA290078A9F5 /* HeatMapEffect.m */; };
+		B678574B0EAA6FD60078A9F5 /* Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B678574A0EAA6FD60078A9F5 /* Keyboard.m */; };
+		B67857710EAC18660078A9F5 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67857700EAC18660078A9F5 /* IOKit.framework */; };
+		B6785A2B0EAF02830078A9F5 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6785A2A0EAF02830078A9F5 /* ApplicationDelegate.m */; };
+		B6785A2E0EAF063A0078A9F5 /* KeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6785A2D0EAF063A0078A9F5 /* KeyboardManager.m */; };
+		B68220A10F1AA655005F5796 /* ScriptingKey.m in Sources */ = {isa = PBXBuildFile; fileRef = B68220A00F1AA655005F5796 /* ScriptingKey.m */; };
+		B68220A80F1AA9B4005F5796 /* AppleScriptEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B68220A70F1AA9B4005F5796 /* AppleScriptEffect.m */; };
+		B68220F10F1AAEB0005F5796 /* NoSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68220F00F1AAEB0005F5796 /* NoSettings.xib */; };
+		B691B6FA0EFB820C00342B09 /* DraggableEffectArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = B691B6F90EFB820C00342B09 /* DraggableEffectArrayController.m */; };
+		B691B78A0EFC2F5000342B09 /* LayerEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B691B7890EFC2F5000342B09 /* LayerEffect.m */; };
+		B6BCCE720F199F2E00259270 /* KeyboardThemer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = B6BCCE710F199F2E00259270 /* KeyboardThemer.sdef */; };
+		B6C043D60F0A11C30012F3E2 /* JavaScriptEffect.mm in Sources */ = {isa = PBXBuildFile; fileRef = B6C043D50F0A11C30012F3E2 /* JavaScriptEffect.mm */; };
+		B6C043DC0F0A138C0012F3E2 /* JavaScriptSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C043DB0F0A138C0012F3E2 /* JavaScriptSettings.xib */; };
+		B6C261140F3684280068090D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C261130F3684280068090D /* Sparkle.framework */; };
+		B6C2612E0F3685DE0068090D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B6C2612D0F3685DE0068090D /* dsa_pub.pem */; };
+		B6C2743B0ED086E100635533 /* LifeEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C2743A0ED086E100635533 /* LifeEffect.m */; };
+		B6C274960ED0B32300635533 /* LifeSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C274950ED0B32300635533 /* LifeSettings.xib */; };
+		B6DCCC7E0F2B1EE300D243D3 /* KeyboardThemerIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = B6DCCC7D0F2B1EE300D243D3 /* KeyboardThemerIcon.icns */; };
+		B6E379AE0FAC30AE00E1B116 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6C261130F3684280068090D /* Sparkle.framework */; };
+		B6E379F30FAC3A7000E1B116 /* libv8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E379F20FAC3A7000E1B116 /* libv8.a */; };
+		B6E6D8520F13399300003A4B /* library.js in Resources */ = {isa = PBXBuildFile; fileRef = B6E6D7E70F1326DF00003A4B /* library.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B6E379AD0FAC308E00E1B116 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B6E379AE0FAC30AE00E1B116 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FBA07B3F13500E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58290DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MyDocument.xib; sourceTree = "<group>"; };
+		1DDD582B0DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32DBCF750370BD2300C91783 /* KeyboardThemer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardThemer_Prefix.pch; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC370486D014006FF6A4 /* KeyboardThemer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardThemer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B614A7250EBEC6E800AF34BB /* KeyboardDisplayBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardDisplayBuffer.h; sourceTree = "<group>"; };
+		B614A7260EBEC6E800AF34BB /* KeyboardDisplayBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardDisplayBuffer.m; sourceTree = "<group>"; };
+		B614A7350EBED90E00AF34BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B614A7FE0EC2DFED00AF34BB /* KeyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyMap.h; sourceTree = "<group>"; };
+		B614A7FF0EC2DFED00AF34BB /* KeyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyMap.m; sourceTree = "<group>"; };
+		B614A8A00EC78D8200AF34BB /* KeyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyEvent.h; sourceTree = "<group>"; };
+		B614A8A10EC78D8200AF34BB /* KeyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyEvent.m; sourceTree = "<group>"; };
+		B614A8A40EC78E0300AF34BB /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		B614A8A50EC78E0300AF34BB /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Key.m; sourceTree = "<group>"; };
+		B61F08C50F1C7F480075585C /* PlasmaEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlasmaEffect.h; sourceTree = "<group>"; };
+		B61F08C60F1C7F480075585C /* PlasmaEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlasmaEffect.m; sourceTree = "<group>"; };
+		B61F0A790F2287B80075585C /* PlasmaSettings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlasmaSettings.xib; sourceTree = "<group>"; };
+		B61F0ABA0F22EF4A0075585C /* MatrixEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixEffect.h; sourceTree = "<group>"; };
+		B61F0ABB0F22EF4A0075585C /* MatrixEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixEffect.m; sourceTree = "<group>"; };
+		B64BA4900F3AC9A600DEB5DC /* Keyboard Themer Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Keyboard Themer Help"; sourceTree = "<group>"; };
+		B678559B0EA5CD8F0078A9F5 /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
+		B678559C0EA5CD8F0078A9F5 /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect.m; sourceTree = "<group>"; };
+		B67855ED0EA703790078A9F5 /* HeatMapSettings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeatMapSettings.xib; sourceTree = "<group>"; };
+		B67856730EA9AA290078A9F5 /* HeatMapEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeatMapEffect.h; sourceTree = "<group>"; };
+		B67856740EA9AA290078A9F5 /* HeatMapEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeatMapEffect.m; sourceTree = "<group>"; };
+		B67857490EAA6FD60078A9F5 /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
+		B678574A0EAA6FD60078A9F5 /* Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keyboard.m; sourceTree = "<group>"; };
+		B67857700EAC18660078A9F5 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		B6785A290EAF02830078A9F5 /* ApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
+		B6785A2A0EAF02830078A9F5 /* ApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDelegate.m; sourceTree = "<group>"; };
+		B6785A2C0EAF063A0078A9F5 /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
+		B6785A2D0EAF063A0078A9F5 /* KeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardManager.m; sourceTree = "<group>"; };
+		B682209F0F1AA655005F5796 /* ScriptingKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptingKey.h; sourceTree = "<group>"; };
+		B68220A00F1AA655005F5796 /* ScriptingKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptingKey.m; sourceTree = "<group>"; };
+		B68220A60F1AA9B4005F5796 /* AppleScriptEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleScriptEffect.h; sourceTree = "<group>"; };
+		B68220A70F1AA9B4005F5796 /* AppleScriptEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleScriptEffect.m; sourceTree = "<group>"; };
+		B68220F00F1AAEB0005F5796 /* NoSettings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoSettings.xib; sourceTree = "<group>"; };
+		B691B6F80EFB820C00342B09 /* DraggableEffectArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableEffectArrayController.h; sourceTree = "<group>"; };
+		B691B6F90EFB820C00342B09 /* DraggableEffectArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableEffectArrayController.m; sourceTree = "<group>"; };
+		B691B7880EFC2F5000342B09 /* LayerEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerEffect.h; sourceTree = "<group>"; };
+		B691B7890EFC2F5000342B09 /* LayerEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerEffect.m; sourceTree = "<group>"; };
+		B6BCCE710F199F2E00259270 /* KeyboardThemer.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; path = KeyboardThemer.sdef; sourceTree = "<group>"; };
+		B6C043D40F0A11C30012F3E2 /* JavaScriptEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JavaScriptEffect.h; sourceTree = "<group>"; };
+		B6C043D50F0A11C30012F3E2 /* JavaScriptEffect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JavaScriptEffect.mm; sourceTree = "<group>"; };
+		B6C043DB0F0A138C0012F3E2 /* JavaScriptSettings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JavaScriptSettings.xib; sourceTree = "<group>"; };
+		B6C261130F3684280068090D /* Sparkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Sparkle.framework; path = ../Sparkle/Sparkle.framework; sourceTree = "<group>"; };
+		B6C2612D0F3685DE0068090D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		B6C274390ED086E100635533 /* LifeEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeEffect.h; sourceTree = "<group>"; };
+		B6C2743A0ED086E100635533 /* LifeEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeEffect.m; sourceTree = "<group>"; };
+		B6C274950ED0B32300635533 /* LifeSettings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeSettings.xib; sourceTree = "<group>"; };
+		B6DCCC7D0F2B1EE300D243D3 /* KeyboardThemerIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = KeyboardThemerIcon.icns; sourceTree = "<group>"; };
+		B6E379F10FAC3A4B00E1B116 /* v8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = v8.h; path = ../v8/v8.h; sourceTree = SOURCE_ROOT; };
+		B6E379F20FAC3A7000E1B116 /* libv8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libv8.a; path = ../v8/libv8.a; sourceTree = SOURCE_ROOT; };
+		B6E6D7E70F1326DF00003A4B /* library.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = library.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D15AC330486D014006FF6A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+				B67857710EAC18660078A9F5 /* IOKit.framework in Frameworks */,
+				B614A7360EBED90E00AF34BB /* QuartzCore.framework in Frameworks */,
+				B6C261140F3684280068090D /* Sparkle.framework in Frameworks */,
+				B6E379F30FAC3A7000E1B116 /* libv8.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6E379F20FAC3A7000E1B116 /* libv8.a */,
+				B6C261130F3684280068090D /* Sparkle.framework */,
+				B614A7350EBED90E00AF34BB /* QuartzCore.framework */,
+				B67857700EAC18660078A9F5 /* IOKit.framework */,
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+				13E42FBA07B3F13500E4EEF1 /* CoreData.framework */,
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D15AC370486D014006FF6A4 /* KeyboardThemer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* KeyboardThemer */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4ABFDCFA73011CA2CEA /* Classes */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				2A37F4B8FDCFA73011CA2CEA /* Resources */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = KeyboardThemer;
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B61F08C50F1C7F480075585C /* PlasmaEffect.h */,
+				B61F08C60F1C7F480075585C /* PlasmaEffect.m */,
+				2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */,
+				2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */,
+				B678559B0EA5CD8F0078A9F5 /* Effect.h */,
+				B678559C0EA5CD8F0078A9F5 /* Effect.m */,
+				B67856730EA9AA290078A9F5 /* HeatMapEffect.h */,
+				B67856740EA9AA290078A9F5 /* HeatMapEffect.m */,
+				B67857490EAA6FD60078A9F5 /* Keyboard.h */,
+				B678574A0EAA6FD60078A9F5 /* Keyboard.m */,
+				B6785A290EAF02830078A9F5 /* ApplicationDelegate.h */,
+				B6785A2A0EAF02830078A9F5 /* ApplicationDelegate.m */,
+				B6785A2C0EAF063A0078A9F5 /* KeyboardManager.h */,
+				B6785A2D0EAF063A0078A9F5 /* KeyboardManager.m */,
+				B614A7250EBEC6E800AF34BB /* KeyboardDisplayBuffer.h */,
+				B614A7260EBEC6E800AF34BB /* KeyboardDisplayBuffer.m */,
+				B614A7FE0EC2DFED00AF34BB /* KeyMap.h */,
+				B614A7FF0EC2DFED00AF34BB /* KeyMap.m */,
+				B614A8A00EC78D8200AF34BB /* KeyEvent.h */,
+				B614A8A10EC78D8200AF34BB /* KeyEvent.m */,
+				B614A8A40EC78E0300AF34BB /* Key.h */,
+				B614A8A50EC78E0300AF34BB /* Key.m */,
+				B6C274390ED086E100635533 /* LifeEffect.h */,
+				B6C2743A0ED086E100635533 /* LifeEffect.m */,
+				B691B6F80EFB820C00342B09 /* DraggableEffectArrayController.h */,
+				B691B6F90EFB820C00342B09 /* DraggableEffectArrayController.m */,
+				B691B7880EFC2F5000342B09 /* LayerEffect.h */,
+				B691B7890EFC2F5000342B09 /* LayerEffect.m */,
+				B6C043D40F0A11C30012F3E2 /* JavaScriptEffect.h */,
+				B6C043D50F0A11C30012F3E2 /* JavaScriptEffect.mm */,
+				B682209F0F1AA655005F5796 /* ScriptingKey.h */,
+				B68220A00F1AA655005F5796 /* ScriptingKey.m */,
+				B68220A60F1AA9B4005F5796 /* AppleScriptEffect.h */,
+				B68220A70F1AA9B4005F5796 /* AppleScriptEffect.m */,
+				B61F0ABA0F22EF4A0075585C /* MatrixEffect.h */,
+				B61F0ABB0F22EF4A0075585C /* MatrixEffect.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B6E379F10FAC3A4B00E1B116 /* v8.h */,
+				32DBCF750370BD2300C91783 /* KeyboardThemer_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B64BA4900F3AC9A600DEB5DC /* Keyboard Themer Help */,
+				B6C2612D0F3685DE0068090D /* dsa_pub.pem */,
+				B6DCCC7D0F2B1EE300D243D3 /* KeyboardThemerIcon.icns */,
+				B6BCCE710F199F2E00259270 /* KeyboardThemer.sdef */,
+				B6E6D7E70F1326DF00003A4B /* library.js */,
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
+				1DDD58280DA1D0D100B32029 /* MyDocument.xib */,
+				1DDD582A0DA1D0D100B32029 /* MainMenu.xib */,
+				B67855ED0EA703790078A9F5 /* HeatMapSettings.xib */,
+				B6C274950ED0B32300635533 /* LifeSettings.xib */,
+				B6C043DB0F0A138C0012F3E2 /* JavaScriptSettings.xib */,
+				B68220F00F1AAEB0005F5796 /* NoSettings.xib */,
+				B61F0A790F2287B80075585C /* PlasmaSettings.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D15AC270486D014006FF6A4 /* KeyboardThemer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "KeyboardThemer" */;
+			buildPhases = (
+				8D15AC2B0486D014006FF6A4 /* Resources */,
+				B6E379AD0FAC308E00E1B116 /* CopyFiles */,
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardThemer;
+			productInstallPath = "$(HOME)/Applications";
+			productName = KeyboardThemer;
+			productReference = 8D15AC370486D014006FF6A4 /* KeyboardThemer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "KeyboardThemer" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* KeyboardThemer */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D15AC270486D014006FF6A4 /* KeyboardThemer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D15AC2B0486D014006FF6A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6E6D8520F13399300003A4B /* library.js in Resources */,
+				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
+				1DDD582C0DA1D0D100B32029 /* MyDocument.xib in Resources */,
+				1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */,
+				B67855EE0EA703790078A9F5 /* HeatMapSettings.xib in Resources */,
+				B6C274960ED0B32300635533 /* LifeSettings.xib in Resources */,
+				B6C043DC0F0A138C0012F3E2 /* JavaScriptSettings.xib in Resources */,
+				B6BCCE720F199F2E00259270 /* KeyboardThemer.sdef in Resources */,
+				B68220F10F1AAEB0005F5796 /* NoSettings.xib in Resources */,
+				B61F0A7A0F2287B80075585C /* PlasmaSettings.xib in Resources */,
+				B6DCCC7E0F2B1EE300D243D3 /* KeyboardThemerIcon.icns in Resources */,
+				B6C2612E0F3685DE0068090D /* dsa_pub.pem in Resources */,
+				B64BA4930F3AC9A600DEB5DC /* Keyboard Themer Help in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D15AC300486D014006FF6A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */,
+				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				B678559D0EA5CD8F0078A9F5 /* Effect.m in Sources */,
+				B67856750EA9AA290078A9F5 /* HeatMapEffect.m in Sources */,
+				B678574B0EAA6FD60078A9F5 /* Keyboard.m in Sources */,
+				B6785A2B0EAF02830078A9F5 /* ApplicationDelegate.m in Sources */,
+				B6785A2E0EAF063A0078A9F5 /* KeyboardManager.m in Sources */,
+				B614A7270EBEC6E800AF34BB /* KeyboardDisplayBuffer.m in Sources */,
+				B614A8000EC2DFED00AF34BB /* KeyMap.m in Sources */,
+				B614A8A20EC78D8200AF34BB /* KeyEvent.m in Sources */,
+				B614A8A60EC78E0300AF34BB /* Key.m in Sources */,
+				B6C2743B0ED086E100635533 /* LifeEffect.m in Sources */,
+				B691B6FA0EFB820C00342B09 /* DraggableEffectArrayController.m in Sources */,
+				B691B78A0EFC2F5000342B09 /* LayerEffect.m in Sources */,
+				B6C043D60F0A11C30012F3E2 /* JavaScriptEffect.mm in Sources */,
+				B68220A10F1AA655005F5796 /* ScriptingKey.m in Sources */,
+				B68220A80F1AA9B4005F5796 /* AppleScriptEffect.m in Sources */,
+				B61F08C70F1C7F480075585C /* PlasmaEffect.m in Sources */,
+				B61F0ABC0F22EF4A0075585C /* MatrixEffect.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1660FE840EACC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58280DA1D0D100B32029 /* MyDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58290DA1D0D100B32029 /* English */,
+			);
+			name = MyDocument.xib;
+			sourceTree = "<group>";
+		};
+		1DDD582A0DA1D0D100B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD582B0DA1D0D100B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C05733C808A9546B00998B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../AquaticPrime/AquaticPrime\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = KeyboardThemer_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../AquaticPrime/AquaticPrime\"",
+					"\"$(SRCROOT)/../v8\"",
+				);
+				OTHER_LDFLAGS = "-lcrypto";
+				PRODUCT_NAME = KeyboardThemer;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		C05733C908A9546B00998B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../AquaticPrime/AquaticPrime\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = KeyboardThemer_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../AquaticPrime/AquaticPrime\"",
+					"\"$(SRCROOT)/../v8\"",
+				);
+				OTHER_LDFLAGS = "-lcrypto";
+				PRODUCT_NAME = KeyboardThemer;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+		C05733CC08A9546B00998B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		C05733CD08A9546B00998B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "KeyboardThemer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05733C808A9546B00998B17 /* Debug */,
+				C05733C908A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "KeyboardThemer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05733CC08A9546B00998B17 /* Debug */,
+				C05733CD08A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}
