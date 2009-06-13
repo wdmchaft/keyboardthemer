@@ -401,36 +401,40 @@ static const UInt8 footer[] = {
                                 kCGEventTapOptionListenOnly,
                                 CGEventMaskBit(kCGEventKeyDown),
                                 KeyDownEvent, self);
-  if (!keyDownTap) {
+  if (keyDownTap) {
+    keyDownSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault,
+                                                  keyDownTap, 0);
+    CFRunLoopAddSource(runLoop, keyDownSource, kCFRunLoopCommonModes);
+  } else {
     NSLog(@"couldn't create key down event tap");
+    keyDownSource = NULL;
   }
-  
-  keyDownSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault,
-                                                keyDownTap, 0);
-  CFRunLoopAddSource(runLoop, keyDownSource, kCFRunLoopCommonModes);
-  
+    
   keyUpTap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap,
                               kCGEventTapOptionListenOnly,
                               CGEventMaskBit(kCGEventKeyUp),
                               KeyUpEvent, self);
-  if (!keyUpTap) {
+  if (keyUpTap) {
+    keyUpSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault,
+                                                keyUpTap, 0);
+    CFRunLoopAddSource(runLoop, keyUpSource, kCFRunLoopCommonModes);
+  } else {
     NSLog(@"couldn't create key up event tap");
+    keyUpSource = NULL;
   }
-  
-  keyUpSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, keyUpTap, 0);
-  CFRunLoopAddSource(runLoop, keyUpSource, kCFRunLoopCommonModes);
   
   keyFlagsTap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap,
                                  kCGEventTapOptionListenOnly,
                                  CGEventMaskBit(kCGEventFlagsChanged),
                                  KeyFlagsEvent, self);
-  if (!keyFlagsTap) {
+  if (keyFlagsTap) {
+    keyFlagsSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault,
+                                                   keyFlagsTap, 0);
+    CFRunLoopAddSource(runLoop, keyFlagsSource, kCFRunLoopCommonModes);
+  } else {
     NSLog(@"couldn't create key down event tap");
+    keyFlagsSource = NULL;
   }
-  
-  keyFlagsSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault,
-                                                 keyFlagsTap, 0);
-  CFRunLoopAddSource(runLoop, keyFlagsSource, kCFRunLoopCommonModes);
   
   // nothing to send yet
   sendStatus = NULL;
@@ -469,6 +473,12 @@ static const UInt8 footer[] = {
 
 @synthesize effect;
 
+- (BOOL)eventTapInstalled {
+  return keyDownTap && keyDownSource
+      && keyUpTap && keyUpSource
+      && keyFlagsTap && keyFlagsSource;
+}
+
 - (BOOL)wasDeviceRemoved {
   // see if this device was closed
   
@@ -499,23 +509,35 @@ static const UInt8 footer[] = {
   
   // shut down the event taps
 
-  CFRunLoopRemoveSource(runLoop, keyDownSource, kCFRunLoopCommonModes);
-  CFRelease(keyDownSource);
-  keyDownSource = NULL;
-  CFRelease(keyDownTap);
-  keyDownTap = NULL;
+  if (keyDownSource) {
+    CFRunLoopRemoveSource(runLoop, keyDownSource, kCFRunLoopCommonModes);
+    CFRelease(keyDownSource);
+    keyDownSource = NULL;
+  }
+  if (keyDownTap) {
+    CFRelease(keyDownTap);
+    keyDownTap = NULL;
+  }
   
-  CFRunLoopRemoveSource(runLoop, keyUpSource, kCFRunLoopCommonModes);
-  CFRelease(keyUpSource);
-  keyUpSource = NULL;
-  CFRelease(keyUpTap);
-  keyUpTap = NULL;
+  if (keyUpSource) {
+    CFRunLoopRemoveSource(runLoop, keyUpSource, kCFRunLoopCommonModes);
+    CFRelease(keyUpSource);
+    keyUpSource = NULL;
+  }
+  if (keyUpTap) {
+    CFRelease(keyUpTap);
+    keyUpTap = NULL;
+  }
 
-  CFRunLoopRemoveSource(runLoop, keyFlagsSource, kCFRunLoopCommonModes);
-  CFRelease(keyFlagsSource);
-  keyFlagsSource = NULL;
-  CFRelease(keyFlagsTap);
-  keyFlagsTap = NULL;
+  if (keyFlagsSource) {
+    CFRunLoopRemoveSource(runLoop, keyFlagsSource, kCFRunLoopCommonModes);
+    CFRelease(keyFlagsSource);
+    keyFlagsSource = NULL;
+  }
+  if (keyFlagsTap) {
+    CFRelease(keyFlagsTap);
+    keyFlagsTap = NULL;
+  }
   
   CFRelease(runLoop);
   runLoop = NULL;

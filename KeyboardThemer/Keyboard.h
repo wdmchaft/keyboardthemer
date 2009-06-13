@@ -48,6 +48,7 @@
 }
 
 @property (retain) Effect* effect;
+@property (readonly) BOOL eventTapInstalled;
 
 - (id)initWithInterface:(IOUSBInterfaceInterface **)ledInterface;
 - (void)draw:(const UInt8 *)colors;

@@ -38,5 +38,6 @@
 
 - (void)startObservingEffect:(Effect*)effect;
 - (void)stopObservingEffect:(Effect*)effect;
+- (IBAction)openUniversalAccess:(id)sender;
 
 @end

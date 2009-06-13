@@ -336,4 +336,9 @@ NSString *EffectPasteboardType = @"Keyboard Themer Effect";
   }
 }
 
+- (IBAction)openUniversalAccess:(id)sender {
+  [[NSWorkspace sharedWorkspace]
+      openFile:@"/System/Library/PreferencePanes/UniversalAccessPref.prefPane"];
+}
+
 @end
